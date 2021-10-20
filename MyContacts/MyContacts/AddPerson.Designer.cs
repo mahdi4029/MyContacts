@@ -56,14 +56,14 @@ namespace MyContacts
             // 
             this.txtName.Location = new System.Drawing.Point(12, 9);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(186, 23);
+            this.txtName.Size = new System.Drawing.Size(202, 23);
             this.txtName.TabIndex = 1;
             // 
             // txtFamily
             // 
             this.txtFamily.Location = new System.Drawing.Point(12, 38);
             this.txtFamily.Name = "txtFamily";
-            this.txtFamily.Size = new System.Drawing.Size(186, 23);
+            this.txtFamily.Size = new System.Drawing.Size(202, 23);
             this.txtFamily.TabIndex = 3;
             // 
             // label2
@@ -88,7 +88,7 @@ namespace MyContacts
             // 
             this.txtMobile.Location = new System.Drawing.Point(12, 96);
             this.txtMobile.Name = "txtMobile";
-            this.txtMobile.Size = new System.Drawing.Size(186, 23);
+            this.txtMobile.Size = new System.Drawing.Size(202, 23);
             this.txtMobile.TabIndex = 7;
             // 
             // label4
@@ -103,8 +103,9 @@ namespace MyContacts
             // txtAddress
             // 
             this.txtAddress.Location = new System.Drawing.Point(12, 125);
+            this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(186, 23);
+            this.txtAddress.Size = new System.Drawing.Size(202, 117);
             this.txtAddress.TabIndex = 9;
             // 
             // label5
@@ -118,7 +119,7 @@ namespace MyContacts
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(227, 172);
+            this.btnSave.Location = new System.Drawing.Point(230, 258);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 10;
@@ -130,14 +131,14 @@ namespace MyContacts
             // 
             this.txtAge.Location = new System.Drawing.Point(12, 67);
             this.txtAge.Name = "txtAge";
-            this.txtAge.Size = new System.Drawing.Size(186, 23);
+            this.txtAge.Size = new System.Drawing.Size(202, 23);
             this.txtAge.TabIndex = 11;
             // 
             // AddPerson
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(317, 207);
+            this.ClientSize = new System.Drawing.Size(317, 293);
             this.Controls.Add(this.txtAge);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.txtAddress);

@@ -46,6 +46,43 @@ namespace MyContacts
         {
             AddPerson frmAddPerson = new AddPerson();
             frmAddPerson.ShowDialog();
+            if (frmAddPerson.DialogResult == DialogResult.OK)
+            {
+                UpdateContacts();
+                MessageBox.Show("شخص جدید با موفقیت افزوده شد", "پیغام", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (dgvContacts.CurrentRow!=null)
+            {
+                if (MessageBox.Show("آیا از حذف فرد مورد نظر مطمئن هستید ؟","هشدار",MessageBoxButtons.YesNo)==DialogResult.Yes)
+                {
+                    _contacts.Delete((int)dgvContacts.CurrentRow.Cells[0].Value);
+                    UpdateContacts();
+                    MessageBox.Show("حذف با موفقیت انجام شد");
+                }
+            }
+            else
+            {
+                MessageBox.Show("لطفا شخصی را در جدول انتخاب کنید", "پیغام", MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+            }
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            if (dgvContacts.CurrentRow!=null)
+            {
+                
+            }
+            else
+            {
+                MessageBox.Show("لطفا شخصی را جهت ویرایش انتخاب کنید", "هشدار", MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+            }
         }
     }
 }

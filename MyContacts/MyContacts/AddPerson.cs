@@ -27,7 +27,42 @@ namespace MyContacts
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            _contacts.AddPerson(txtName.Text, txtFamily.Text, txtAge.Text, txtMobile.Text, txtAddress.Text);
+            if (ValidateInput())
+            {
+                _contacts.AddPerson(txtName.Text, txtFamily.Text, txtAge.Text, txtMobile.Text, txtAddress.Text);
+                DialogResult = DialogResult.OK;
+            }
+        }
+
+        bool ValidateInput()
+        {
+            if (txtName.Text=="")
+            {
+                MessageBox.Show("لطفا نام را وارد کنید", "هشدار", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            if (txtFamily.Text == "")
+            {
+                MessageBox.Show("لطفا نام خانوادگی را وارد کنید", "هشدار", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            if (txtAge.Value == 0)
+            {
+                MessageBox.Show("لطفا سن را وارد کنید", "هشدار", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            if (txtMobile.Text == "")
+            {
+                MessageBox.Show("لطفا موبایل را وارد کنید", "هشدار", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            if (txtAddress.Text == "")
+            {
+                MessageBox.Show("لطفا آدرس را وارد کنید", "هشدار", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            return true;
         }
     }
 }
