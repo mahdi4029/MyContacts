@@ -56,9 +56,11 @@ namespace MyContacts
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            string name = dgvContacts.CurrentRow.Cells[1].Value.ToString();
+            string family = dgvContacts.CurrentRow.Cells[2].Value.ToString();
             if (dgvContacts.CurrentRow!=null)
             {
-                if (MessageBox.Show("آیا از حذف فرد مورد نظر مطمئن هستید ؟","هشدار",MessageBoxButtons.YesNo)==DialogResult.Yes)
+                if (MessageBox.Show($"آیا از حذف {name+""+family} مطمئن هستید؟","هشدار",MessageBoxButtons.YesNo)==DialogResult.Yes)
                 {
                     _contacts.Delete((int)dgvContacts.CurrentRow.Cells[0].Value);
                     UpdateContacts();
@@ -76,13 +78,27 @@ namespace MyContacts
         {
             if (dgvContacts.CurrentRow!=null)
             {
-                
+                EditPerson editPerson = new EditPerson();
+                editPerson.contactId = (int)dgvContacts.CurrentRow.Cells[0].Value;
+                editPerson.ShowDialog();
+                if (editPerson.DialogResult==DialogResult.OK)
+                {
+                    UpdateContacts();
+                    MessageBox.Show("عملیات ویرایش با موفقیت انجام شد", "پیغام", MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                }
             }
             else
             {
                 MessageBox.Show("لطفا شخصی را جهت ویرایش انتخاب کنید", "هشدار", MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
             }
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+           DataTable dataTable = _contacts.Search(txtSearch.Text);
+           dgvContacts.DataSource = dataTable;
         }
     }
 }

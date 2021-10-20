@@ -6,8 +6,8 @@
       "version": "5.0.0"
     },
     "additionalProbingPaths": [
-      "C:\\Users\\Greenrayane\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\Greenrayane\\.nuget\\packages",
+      "C:\\Users\\MR\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\MR\\.nuget\\packages",
       "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
     ],
     "configProperties": {

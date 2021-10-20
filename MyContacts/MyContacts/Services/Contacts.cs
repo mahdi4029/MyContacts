@@ -81,12 +81,21 @@ namespace MyContacts.Repository
 
         }
 
-        public bool Edit(int contactId)
+        public bool Edit(int contactId, string name, string family, string age, string mobile, string address)
         {
             try
             {
                 string query =
                     $"update MyContacts set Name=@name, Family=@family, Age=@age, Mobile=@mobile, Address=@address where ContactId={contactId}";
+                SqlCommand command = new SqlCommand(query, connection);
+                connection.Open();
+                command.Parameters.AddWithValue("@Id", contactId);
+                command.Parameters.AddWithValue("@name", name);
+                command.Parameters.AddWithValue("@family", family);
+                command.Parameters.AddWithValue("@age", age);
+                command.Parameters.AddWithValue("@mobile", mobile);
+                command.Parameters.AddWithValue("@address", address);
+                command.ExecuteNonQuery();
                 return true;
             }
             catch
@@ -97,6 +106,18 @@ namespace MyContacts.Repository
             {
                 connection.Close();
             }
+        }
+
+        public DataTable Search(string parameter)
+        {
+            string query = "select * from MyContacts where name like @parameter or family like @parameter";
+            SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+            adapter.SelectCommand.Parameters.AddWithValue("@parameter", "%" + parameter + "%");
+            DataTable dataTable = new DataTable();
+            adapter.Fill(dataTable);
+            return dataTable;
+
+
         }
 
 

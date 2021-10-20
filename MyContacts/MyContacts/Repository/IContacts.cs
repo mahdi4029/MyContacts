@@ -13,6 +13,7 @@ namespace MyContacts.Repository
         bool AddPerson(string name, string family, string age, string mobile, string address);
         bool Delete(int contactId);
         DataTable Select(int contactId);
-        bool Edit(int contactId);
+        bool Edit(int contactId,string name,string family,string age,string mobile,string address);
+        DataTable Search(string parameter);
     }
 }

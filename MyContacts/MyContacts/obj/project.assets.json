@@ -451,23 +451,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Greenrayane\\.nuget\\packages\\": {},
+    "C:\\Users\\MR\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Greenrayane\\Desktop\\portfolio\\MyContacts\\MyContacts\\MyContacts\\MyContacts.csproj",
+      "projectUniqueName": "C:\\Users\\MR\\Source\\Repos\\mahdi4029\\MyContacts\\MyContacts\\MyContacts\\MyContacts.csproj",
       "projectName": "MyContacts",
-      "projectPath": "C:\\Users\\Greenrayane\\Desktop\\portfolio\\MyContacts\\MyContacts\\MyContacts\\MyContacts.csproj",
-      "packagesPath": "C:\\Users\\Greenrayane\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Greenrayane\\Desktop\\portfolio\\MyContacts\\MyContacts\\MyContacts\\obj\\",
+      "projectPath": "C:\\Users\\MR\\Source\\Repos\\mahdi4029\\MyContacts\\MyContacts\\MyContacts\\MyContacts.csproj",
+      "packagesPath": "C:\\Users\\MR\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\MR\\Source\\Repos\\mahdi4029\\MyContacts\\MyContacts\\MyContacts\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Greenrayane\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\MR\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -516,7 +516,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }

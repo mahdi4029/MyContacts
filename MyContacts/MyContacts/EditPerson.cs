@@ -11,27 +11,34 @@ using MyContacts.Repository;
 
 namespace MyContacts
 {
-    public partial class AddPerson : Form
+    public partial class EditPerson : Form
     {
         private IContacts _contacts;
-        public AddPerson()
+        public int contactId=0;
+        public EditPerson()
         {
             InitializeComponent();
             _contacts = new Contacts();
-        }
-
-        private void AddPerson_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (ValidateInput())
             {
-                _contacts.AddPerson(txtName.Text, txtFamily.Text, txtAge.Text, txtMobile.Text, txtAddress.Text);
+                _contacts.Edit(contactId, txtName.Text, txtFamily.Text, txtAge.Text,txtMobile.Text, txtAddress.Text);
                 DialogResult = DialogResult.OK;
             }
+        }
+
+        private void EditPerson_Load(object sender, EventArgs e)
+        {
+           DataTable dataTable = _contacts.Select(contactId);
+
+           txtName.Text = dataTable.Rows[0][1].ToString();
+           txtFamily.Text = dataTable.Rows[0][2].ToString();
+           txtAge.Text = dataTable.Rows[0][3].ToString();
+           txtMobile.Text = dataTable.Rows[0][4].ToString();
+           txtAddress.Text = dataTable.Rows[0][5].ToString();
         }
 
         bool ValidateInput()
@@ -64,7 +71,5 @@ namespace MyContacts
 
             return true;
         }
-
-
     }
 }
